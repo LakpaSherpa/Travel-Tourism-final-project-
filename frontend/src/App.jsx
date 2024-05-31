@@ -8,10 +8,16 @@ import NoPage from "./pages/NoPage";
 import PlacesRoute from "./pages/PlacesRoute";
 import About from "./pages/About";
 import BlogsDetails from "./pages/BlogsDetails";
-import AdminDashboard from "./pages/admin/Dashboard.jsx/AdminDashBoard";
+import AdminHome from "./pages/Admin";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import AdminLayout from "./AdminLayout";
+import Region from "./pages/Admin/Region";
+import Destination from "./pages/Admin/Destination";
+import Blog from "./pages/Admin/Blog";
+import RegionForm from "./pages/Admin/CreateRegion";
+import DestinationForm from "./pages/Admin/CreateDestination";
+import DestinationTable from "./pages/Admin/Destination";
+import CreateBlog from "./pages/Admin/CreateBlog";
 
 const App = () => {
   React.useEffect(() => {
@@ -33,9 +39,16 @@ const App = () => {
             <Route path="blogs/:id" element={<BlogsDetails />} />
             <Route path="best-places" element={<PlacesRoute />} />
             <Route path="about" element={<About />} />
-            <Route path="admin" element={<AdminLayout />} />
-            <Route path="*" element={<NoPage />} />
           </Route>
+          <Route path="admin" element={<AdminHome />} />
+
+          <Route path="admin/region" element={<Region />} />
+          <Route path="admin/destination" element={<DestinationTable />} />
+          <Route path="admin/blog" element={<Blog />} />
+          <Route path="admin/createRegion" element={<RegionForm />} />
+           <Route path="admin/createDestination" element={<DestinationForm />} />
+           <Route path="admin/createBlog" element={<CreateBlog />} />
+          <Route path="*" element={<NoPage />} />
         </Routes>
       </BrowserRouter>
     </>

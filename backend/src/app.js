@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 
 const ApiError = require("./utils/ApiError");
 const httpStatus = require("http-status");
@@ -6,6 +7,7 @@ const routes = require("./routes/");
 const config = require("./config/keys");
 const cors = require("cors");
 const bodyParser = require('body-parser');
+
 
 const connectionDb = require("./db/database");
 const { errorConverter, errorHandler } = require("./middleware/error");
@@ -24,12 +26,15 @@ app.use(cors());
 // parse urlencoded request body
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
+app.use(express.static(path.join(__dirname, 'public/uploads')));
 
 //connect MongoDb
 connectionDb();
 
 //api routes
 app.use("/api", routes);
+
+
 
 //send back 404 error if request not found
 app.use((req, res, next) => {

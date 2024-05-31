@@ -12,8 +12,8 @@ describe("GET v1/patient/", () => {
 describe("POST v1/patient/", () => {
   it("should return all patient", async () => {
     const res = await request(app).post("v1/patient/").send({
-      fullName: "Aashish Pokhrel",
-      email: "aashishpokhrel146@gmail.com",
+      fullName: "Pasang lakpa Sherpa",
+      email: "pasanglakpasherpa101@gmail.com",
       contactNo: "9860409629",
       dob: "1997-09-27",
       address: "Kathmandu",

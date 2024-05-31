@@ -6,4 +6,36 @@
   .active {
     @apply text-primary;
   }
+
+  .admin-layout-bg {
+    background: #f7f7fd;
+  }
+
+  .admin-link,
+  .admin-link-active {
+    list-style: none;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 25px;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  .admin-link:hover {
+    background-color: #253080;
+    color: #fff;
+  }
+
+  .admin-link-active {
+    background-color: #253080;
+    color: #fff;
+  }
+  .admin-link {
+    color: #4b4b4b;
+  }
+  .admin-text-color {
+    color: #4b4b4b;
+  }
 }
